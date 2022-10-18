@@ -16,7 +16,9 @@
 			<a-cylinder position="0 0 -4" radius="0.03" height="6" color="#333333"></a-cylinder>
 			<a-cylinder position="0 0 -4" rotation="-90 0 0" radius="0.03" height="6" color="#333333"></a-cylinder>
 			<a-cylinder position="0 0 -4" rotation="0 0 90" radius="0.03" height="6" color="#333333"></a-cylinder>
-			<a-sphere position="0 1.25 -5" radius="0.05" color="#EF2D5E"></a-sphere>
+			<a-sphere v-for="p in getPlotValues3D" 
+				  :position="`${p.x} ${p.y} ${p.z}`" 
+				  :radius="`${p.r}`" color="#EF2D5E"></a-sphere>
 			<!--a-box v-for="num in array" :position="`-1 ${0.5 * num} -3`" :rotation="`0 ${15*num} 0`" color="#4CC3D9"></a-box>
 			<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
 			<a-sky color="#ECECEC"></a-sky-->
@@ -31,7 +33,7 @@
 			  array: [1, 2, 3, 4, 5]
 			} 
 		  },
-		  methods: {
+		  computed: {
 			getPlotValues2D: function() {
 
 			},
@@ -45,7 +47,9 @@
 				for (let x = minX; x <= maxX; x += step) {
 					for (let y = minY; y <= maxY; y += step) {
 						valores.push({
-							x,y,z: x*x + y*y
+							x,y,
+							z: x*x + y*y,
+							r:0.05
 						})
 					}
 				}
