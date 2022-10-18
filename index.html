@@ -1,0 +1,27 @@
+<html>
+  <head>
+	<title>XR Math</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+	<script type="importmap">
+		{
+		  "imports": {
+			"vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+		  }
+		}
+	</script>
+  </head>
+  <body>
+	<div id="app">
+		<a-scene>
+			<a-cylinder position="0 0 -4" radius="0.03" height="6" color="#333333"></a-cylinder>
+			<a-cylinder position="0 0 -4" rotation="-90 0 0" radius="0.03" height="6" color="#333333"></a-cylinder>
+			<a-cylinder position="0 0 -4" rotation="0 0 90" radius="0.03" height="6" color="#333333"></a-cylinder>
+			<a-sphere v-for="" position="0 1.25 -5" radius="0.05" color="#EF2D5E"></a-sphere>
+			<!--a-box v-for="num in array" :position="`-1 ${0.5 * num} -3`" :rotation="`0 ${15*num} 0`" color="#4CC3D9"></a-box>
+			<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+			<a-sky color="#ECECEC"></a-sky-->
+		</a-scene>
+	</div>
+	<script type="module" src="./main.js"></script> 
+  </body>
+</html>
